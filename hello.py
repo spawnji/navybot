@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 errorcode1 = "GX013"
@@ -26,5 +27,5 @@ async def on_message(message):
         await message.channel.send(file.read())
         file.close()
 
-
-client.run("NjIyNTc4MjU0ODg4NDM1NzIy.XX1_VA.rpMsDTH-E0Bw_gFoOpWLu4MWPjE")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
